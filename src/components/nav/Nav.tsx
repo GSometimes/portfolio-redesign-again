@@ -48,7 +48,7 @@ const Nav = () => {
     <>
       {/* Above 1536px styling */}
       {matches && (
-        <nav className='flex flex-col md:flex-row item-center justify-center w-full gap-2 p-4 overflow-hidden'>
+        <nav className='flex flex-col md:flex-row item-center justify-center w-full gap-2 p-4'>
           <motion.div
             className='w-full md:w-2/5 flex items-center font-serif tracking-normal sm:tracking-wide text-xl px-4'
             variants={sentence}
@@ -98,7 +98,7 @@ const Nav = () => {
 
       {/* Below 1536px styling */}
       {!matches && (
-        <nav className='flex flex-col lg:flex-row item-center justify-center w-full gap-8 sm:gap-6 px-2 py-4'>
+        <nav className='flex flex-col lg:flex-row item-center justify-center w-full gap-4 sm:gap-6 px-2 py-4 mb-4 outline outline-white'>
           <motion.div
             variants={sentence}
             initial='hidden'
@@ -114,13 +114,13 @@ const Nav = () => {
           </motion.div>
 
           <motion.ul
-            className='w-full gap-4 lg:gap-6 flex flex-col sm:flex-row items-center justify-end'
+            className='w-full gap-2 sm:gap-4 lg:gap-6 flex flex-col sm:flex-row items-center justify-end'
             variants={containerVariants}
             initial='hidden'
             animate='visible'
           >
             <motion.li
-              className='w-full lg:w-40 bg-silver text-black  flex items-center justify-center relative text-xl sm:text-2xl md:text-3xl p-4 font-sans font-black tracking-normal hover:text-dark-green rounded-3xl'
+              className='w-full lg:w-40 bg-silver text-black flex items-center justify-center relative text-xl sm:text-2xl md:text-3xl p-4 font-sans font-black tracking-normal hover:text-dark-green rounded-3xl'
               whileHover={{ scale: 0.98 }}
               whileTap={{ scale: 0.95 }}
               variants={itemVariants}
@@ -128,7 +128,7 @@ const Nav = () => {
               Work
             </motion.li>
             <motion.li
-              className='w-full lg:w-40 bg-silver text-black  flex items-center justify-center relative text-xl sm:text-2xl md:text-3xl p-4 font-sans font-black tracking-normal hover:text-dark-green rounded-3xl'
+              className='w-full lg:w-40 bg-silver text-black flex items-center justify-center relative text-xl sm:text-2xl md:text-3xl p-4 font-sans font-black tracking-normal hover:text-dark-green rounded-3xl'
               whileHover={{ scale: 0.98 }}
               whileTap={{ scale: 0.95 }}
               variants={itemVariants}
@@ -136,7 +136,7 @@ const Nav = () => {
               About
             </motion.li>
             <motion.li
-              className='w-full lg:w-40 bg-silver text-black  flex items-center justify-center relative text-xl sm:text-2xl md:text-3xl p-4 font-sans font-black tracking-normal hover:text-dark-green rounded-3xl'
+              className='w-full lg:w-40 bg-silver text-black flex items-center justify-center relative text-xl sm:text-2xl md:text-3xl p-4 font-sans font-black tracking-normal hover:text-dark-green rounded-3xl'
               whileHover={{ scale: 0.98 }}
               whileTap={{ scale: 0.95 }}
               variants={itemVariants}

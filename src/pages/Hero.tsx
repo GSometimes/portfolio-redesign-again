@@ -24,7 +24,7 @@ const Hero = () => {
 
   const oneLiner = 'Developing your window to the web.';
   return (
-    <section className='text-silver h-screen flex flex-col items-center justify-between'>
+    <section className='text-silver h-dvh flex flex-col items-center justify-between'>
       <div className='h-1/2 w-full flex flex-col items-start justify-center gap-2 sm:gap-0'>
         <ScreenFitText text='Gore Auluck' />
         <motion.div
