@@ -4,7 +4,6 @@ import { useMediaQuery } from '../../utils/useMediaQuery';
 const Nav = () => {
   const matches = useMediaQuery('(min-width: 1536px)');
   const oneLiner = 'Frontend developer with three years of experience.';
-  console.log(oneLiner.split(' '));
 
   const sentence = {
     hidden: { opacity: 0 },
@@ -98,7 +97,7 @@ const Nav = () => {
 
       {/* Below 1536px styling */}
       {!matches && (
-        <nav className='flex flex-col lg:flex-row item-center justify-center w-full gap-4 sm:gap-6 px-2 py-4 mb-4 outline outline-white'>
+        <nav className='flex flex-col lg:flex-row item-center justify-center w-full gap-4 sm:gap-6 px-2 py-4 mb-4 sm:mb-0'>
           <motion.div
             variants={sentence}
             initial='hidden'
@@ -114,7 +113,7 @@ const Nav = () => {
           </motion.div>
 
           <motion.ul
-            className='w-full gap-2 sm:gap-4 lg:gap-6 flex flex-col sm:flex-row items-center justify-end'
+            className='w-full gap-2 sm:gap-4 lg:gap-6 flex flex-row items-center justify-end'
             variants={containerVariants}
             initial='hidden'
             animate='visible'

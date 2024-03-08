@@ -6,3 +6,12 @@
   background-color: #dee2e6;
   color: #033525;
 }
+
+/* hides scrollbar because ew */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
