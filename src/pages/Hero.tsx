@@ -35,7 +35,11 @@ const Hero = () => {
         >
           <span className='sr-only'>{oneLiner}</span>
           {oneLiner.split('').map((char, index) => (
-            <motion.span key={`${char} - ${index}`} variants={letter}>
+            <motion.span
+              key={`${char} - ${index}`}
+              variants={letter}
+              aria-hidden='true'
+            >
               {char === ' ' ? '\u00A0' : char}
             </motion.span>
           ))}

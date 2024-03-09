@@ -1,10 +1,23 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useMediaQuery } from '../../utils/useMediaQuery';
+import { useState } from 'react';
 
 const Nav = () => {
   const matches = useMediaQuery('(min-width: 1536px)');
   const oneLiner = 'Frontend developer with three years of experience.';
+  const [scrolling, setScrolling] = useState<boolean>(false);
 
+  const handleScroll = () => {
+    if (window.scrollY >= window.innerHeight) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  // one liner variant
   const sentence = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,6 +37,7 @@ const Nav = () => {
     },
   };
 
+  // nav items variant
   const containerVariants = {
     hidden: { opacity: 1 },
     visible: {
@@ -43,6 +57,29 @@ const Nav = () => {
     },
   };
 
+  // fixed nav variants
+  const fixedNavVariants = {
+    initial: {
+      y: -50,
+      x: '-50%',
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      x: '-50%',
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        damping: 10,
+        stiffness: 100,
+      },
+    },
+    exit: {
+      y: -50,
+      opacity: 0,
+    },
+  };
+
   return (
     <>
       {/* Above 1536px styling */}
@@ -56,7 +93,11 @@ const Nav = () => {
           >
             <span className='sr-only'>{oneLiner}</span>
             {oneLiner.split('').map((char, index) => (
-              <motion.span key={`${char} - ${index}`} variants={letter}>
+              <motion.span
+                key={`${char} - ${index}`}
+                variants={letter}
+                aria-hidden='true'
+              >
                 {char === ' ' ? '\u00A0' : char}
               </motion.span>
             ))}
@@ -97,7 +138,7 @@ const Nav = () => {
 
       {/* Below 1536px styling */}
       {!matches && (
-        <nav className='flex flex-col lg:flex-row item-center justify-center w-full gap-4 sm:gap-6 px-2 py-4 mb-4 sm:mb-0'>
+        <nav className='flex flex-col lg:flex-row item-center justify-center w-full gap-4 sm:gap-6 px-2 py-4 mb-2 sm:mb-0'>
           <motion.div
             variants={sentence}
             initial='hidden'
@@ -106,7 +147,11 @@ const Nav = () => {
           >
             <span className='sr-only'>{oneLiner}</span>
             {oneLiner.split('').map((char, index) => (
-              <motion.span key={`${char} - ${index}`} variants={letter}>
+              <motion.span
+                key={`${char} - ${index}`}
+                variants={letter}
+                aria-hidden='true'
+              >
                 {char === ' ' ? '\u00A0' : char}
               </motion.span>
             ))}
@@ -119,7 +164,7 @@ const Nav = () => {
             animate='visible'
           >
             <motion.li
-              className='w-full lg:w-40 bg-silver text-black flex items-center justify-center relative text-xl sm:text-2xl md:text-3xl p-4 font-sans font-black tracking-normal hover:text-dark-green rounded-3xl'
+              className='w-full lg:w-40 bg-silver text-black flex items-center justify-center relative text-lg sm:text-2xl md:text-3xl p-2 sm:p-4 font-sans font-black tracking-normal hover:text-dark-green rounded-3xl'
               whileHover={{ scale: 0.98 }}
               whileTap={{ scale: 0.95 }}
               variants={itemVariants}
@@ -127,7 +172,7 @@ const Nav = () => {
               Work
             </motion.li>
             <motion.li
-              className='w-full lg:w-40 bg-silver text-black flex items-center justify-center relative text-xl sm:text-2xl md:text-3xl p-4 font-sans font-black tracking-normal hover:text-dark-green rounded-3xl'
+              className='w-full lg:w-40 bg-silver text-black flex items-center justify-center relative text-lg sm:text-2xl md:text-3xl p-2 sm:p-4 font-sans font-black tracking-normal hover:text-dark-green rounded-3xl'
               whileHover={{ scale: 0.98 }}
               whileTap={{ scale: 0.95 }}
               variants={itemVariants}
@@ -135,7 +180,7 @@ const Nav = () => {
               About
             </motion.li>
             <motion.li
-              className='w-full lg:w-40 bg-silver text-black flex items-center justify-center relative text-xl sm:text-2xl md:text-3xl p-4 font-sans font-black tracking-normal hover:text-dark-green rounded-3xl'
+              className='w-full lg:w-40 bg-silver text-black flex items-center justify-center relative text-lg sm:text-2xl md:text-3xl p-2 sm:p-4 font-sans font-black tracking-normal hover:text-dark-green rounded-3xl'
               whileHover={{ scale: 0.98 }}
               whileTap={{ scale: 0.95 }}
               variants={itemVariants}
@@ -144,6 +189,23 @@ const Nav = () => {
             </motion.li>
           </motion.ul>
         </nav>
+      )}
+      {scrolling && (
+        <AnimatePresence>
+          <motion.nav
+            initial='initial'
+            animate='animate'
+            exit='exit'
+            variants={fixedNavVariants}
+            className='fixed z-10 px-4 py-2 rounded-3xl left-1/2 top-10 bg-silver text-dark-green'
+          >
+            <ul className='flex items-center gap-4 font-serif font-bold'>
+              <li className='px-2'>Work</li>
+              <li className='px-2'>About</li>
+              <li className='px-2'>Contact</li>
+            </ul>
+          </motion.nav>
+        </AnimatePresence>
       )}
     </>
   );
