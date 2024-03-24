@@ -1,64 +1,48 @@
-import { motion } from 'framer-motion';
+import { easeInOut, motion, Variants } from 'framer-motion';
 import Nav from '../components/nav/Nav';
 import ScreenFitText from '../components/textfit/ScreeFitText';
 
 const Hero = () => {
-  const sentence = {
-    hidden: { opacity: 1 },
-    visible: {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    show: {
       opacity: 1,
       transition: {
-        delay: 0.2,
-        staggerChildren: 0.06,
+        staggerChildren: 0.3,
       },
     },
   };
 
-  const letter = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { duration: 0.5, ease: 'easeInOut' },
-    },
+  const itemVariants: Variants = {
+    hidden: { y: 20, opacity: 0 },
+    show: { y: 0, opacity: 1, transition: { duration: 0.5, ease: easeInOut } },
   };
 
-  const oneLiner = 'Developing your window to the web.';
   return (
     <section className='text-silver min-h-dvh flex flex-col items-center justify-between'>
-      <div className='h-1/2 w-full flex flex-col items-start justify-center gap-2 sm:gap-0'>
-        <ScreenFitText
-          text='Gore Auluck'
-          variants={{
-            hidden: {
-              opacity: 0,
-            },
-            visible: {
-              opacity: 1,
-              transition: {
-                duration: 2,
-                ease: 'easeInOut',
-              },
-            },
-          }}
-        />
-        <motion.div
-          variants={sentence}
-          className='flex items-center justify-center text-lg sm:text-2xl lg:text-4xl font-monospace px-2 sm:px-6'
-          initial='hidden'
-          animate='visible'
-        >
-          <span className='sr-only'>{oneLiner}</span>
-          {oneLiner.split('').map((char, index) => (
-            <motion.span
-              key={`${char} - ${index}`}
-              variants={letter}
-              aria-hidden='true'
-            >
-              {char === ' ' ? '\u00A0' : char}
-            </motion.span>
-          ))}
+      <motion.div
+        variants={containerVariants}
+        initial='hidden'
+        animate='show'
+        className='w-full flex flex-col items-start justify-center gap-2 sm:gap-4 font-monospace'
+      >
+        <motion.div variants={itemVariants} className='h-full w-full'>
+          <ScreenFitText text='Gore Auluck' />
         </motion.div>
-      </div>
+        <motion.p
+          className='text-lg sm:text-2xl lg:text-4xl px-2 sm:px-6 font-bold'
+          variants={itemVariants}
+        >
+          Developing your window to the web.
+        </motion.p>
+        <motion.p
+          className='text-sm sm:text-base px-2 sm:px-6 max-w-[768px]'
+          variants={itemVariants}
+        >
+          I'm a frontend developer with a culinary background, blending 10 years
+          of culinary creativity with 3 years of tech.
+        </motion.p>
+      </motion.div>
       <Nav />
     </section>
   );

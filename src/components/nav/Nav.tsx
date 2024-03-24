@@ -43,7 +43,7 @@ const Nav = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 3,
+        delayChildren: 1,
         staggerChildren: 0.25,
       },
     },
@@ -53,7 +53,7 @@ const Nav = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 2, ease: 'easeInOut' },
+      transition: { duration: 1, ease: 'easeInOut' },
     },
   };
 
@@ -84,8 +84,8 @@ const Nav = () => {
     <>
       {/* Above 1536px styling */}
       {/* {matches && ( */}
-        <nav className='flex flex-row item-center justify-center w-full gap-2 p-4'>
-          {/* <motion.div
+      <nav className='flex flex-row item-center justify-center w-full gap-2 p-4'>
+        {/* <motion.div
             className='w-full md:w-2/5 flex items-center font-monospace tracking-normal sm:tracking-wide text-xl px-4'
             variants={sentence}
             initial='hidden'
@@ -102,38 +102,38 @@ const Nav = () => {
               </motion.span>
             ))}
           </motion.div> */}
-          <motion.ul
-            className='w-full gap-8 flex items-center justify-evenly font-monospace'
-            variants={containerVariants}
-            initial='hidden'
-            animate='visible'
+        <motion.ul
+          className='w-full gap-8 flex flex-col md:flex-row items-center justify-evenly font-monospace'
+          variants={containerVariants}
+          initial='hidden'
+          animate='visible'
+        >
+          <motion.li
+            className='w-full md:w-1/3 outline text-silver  flex items-center justify-center relative text-2xl md:text-3xl lg:text-5xl xl:text-7xl p-4 font-black tracking-wide hover:text-orange-peel rounded-3xl'
+            whileHover={{ scale: 0.98 }}
+            whileTap={{ scale: 0.95 }}
+            variants={itemVariants}
           >
-            <motion.li
-              className='w-1/3 outline text-silver  flex items-center justify-center relative text-2xl md:text-3xl lg:text-5xl xl:text-7xl p-4 font-black tracking-wide hover:text-orange-peel rounded-3xl'
-              whileHover={{ scale: 0.98 }}
-              whileTap={{ scale: 0.95 }}
-              variants={itemVariants}
-            >
-              Work
-            </motion.li>
-            <motion.li
-              className='w-1/3 outline text-silver  flex items-center justify-center relative text-2xl md:text-3xl lg:text-5xl xl:text-7xl p-4 font-black tracking-wide hover:text-orange-peel rounded-3xl'
-              whileHover={{ scale: 0.98 }}
-              whileTap={{ scale: 0.95 }}
-              variants={itemVariants}
-            >
-              About
-            </motion.li>
-            <motion.li
-              className='w-1/3 outline text-silver  flex items-center justify-center relative text-2xl md:text-3xl lg:text-5xl xl:text-7xl p-4 font-black tracking-wide hover:text-orange-peel rounded-3xl'
-              whileHover={{ scale: 0.98 }}
-              whileTap={{ scale: 0.95 }}
-              variants={itemVariants}
-            >
-              Contact
-            </motion.li>
-          </motion.ul>
-        </nav>
+            Work
+          </motion.li>
+          <motion.li
+            className='w-full md:w-1/3  outline text-silver  flex items-center justify-center relative text-2xl md:text-3xl lg:text-5xl xl:text-7xl p-4 font-black tracking-wide hover:text-orange-peel rounded-3xl'
+            whileHover={{ scale: 0.98 }}
+            whileTap={{ scale: 0.95 }}
+            variants={itemVariants}
+          >
+            About
+          </motion.li>
+          <motion.li
+            className='w-full md:w-1/3  outline text-silver  flex items-center justify-center relative text-2xl md:text-3xl lg:text-5xl xl:text-7xl p-4 font-black tracking-wide hover:text-orange-peel rounded-3xl'
+            whileHover={{ scale: 0.98 }}
+            whileTap={{ scale: 0.95 }}
+            variants={itemVariants}
+          >
+            Contact
+          </motion.li>
+        </motion.ul>
+      </nav>
       {/* )} */}
 
       {/* Below 1536px styling */}
