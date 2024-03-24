@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Nav from '../components/nav/Nav';
-import { ScreenFitText } from '../components/textfit/ScreeFitText';
+import ScreenFitText from '../components/textfit/ScreeFitText';
 
 const Hero = () => {
   const sentence = {
@@ -24,12 +24,26 @@ const Hero = () => {
 
   const oneLiner = 'Developing your window to the web.';
   return (
-    <section className='text-silver h-dvh flex flex-col items-center justify-between'>
+    <section className='text-silver min-h-dvh flex flex-col items-center justify-between'>
       <div className='h-1/2 w-full flex flex-col items-start justify-center gap-2 sm:gap-0'>
-        <ScreenFitText text='Gore Auluck' />
+        <ScreenFitText
+          text='Gore Auluck'
+          variants={{
+            hidden: {
+              opacity: 0,
+            },
+            visible: {
+              opacity: 1,
+              transition: {
+                duration: 2,
+                ease: 'easeInOut',
+              },
+            },
+          }}
+        />
         <motion.div
           variants={sentence}
-          className='flex items-center justify-center text-lg sm:text-2xl lg:text-4xl font-serif px-2 sm:px-6'
+          className='flex items-center justify-center text-lg sm:text-2xl lg:text-4xl font-monospace px-2 sm:px-6'
           initial='hidden'
           animate='visible'
         >

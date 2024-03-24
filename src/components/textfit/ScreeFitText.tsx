@@ -1,40 +1,44 @@
-import { motion } from 'framer-motion';
-import { useCallback, useEffect, useRef } from 'react';
+import { motion, Variants, useAnimation, useInView } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
-export const ScreenFitText = ({ text }: { text: string }) => {
-  const staggerText = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 2,
-        ease: 'easeInOut',
-      },
-    },
-  };
+interface ScreenFitTextProps {
+  text: string;
+  variants: Variants;
+}
 
+const ScreenFitText = ({ text, variants }: ScreenFitTextProps) => {
+  const controls = useAnimation();
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.5 });
 
-  const resizeText = useCallback(() => {
+  // const fadeInText = {
+  //   hidden: { opacity: 0 },
+  //   visible: { opacity: 1, transition: { duration: 2, ease: 'easeInOut' } },
+  // };
+
+  const defaultVariants = variants;
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start('visible');
+    }
+  }, [controls, isInView]);
+
+  const resizeText = () => {
     const container = containerRef.current;
     const textElement = textRef.current;
 
-    if (!container || !textElement) {
-      return;
-    }
+    if (!container || !textElement) return;
 
-    const containerWidth = container.offsetWidth;
-    let min = 1;
-    let max = 2500;
+    let min = 1,
+      max = 2500;
 
     while (min <= max) {
       const mid = Math.floor((min + max) / 2);
       textElement.style.fontSize = `${mid}px`;
 
-      if (textElement.offsetWidth <= containerWidth) {
+      if (textElement.offsetWidth <= container.offsetWidth) {
         min = mid + 1;
       } else {
         max = mid - 1;
@@ -42,37 +46,39 @@ export const ScreenFitText = ({ text }: { text: string }) => {
     }
 
     textElement.style.fontSize = `${max}px`;
-  }, []);
+  };
 
   useEffect(() => {
     resizeText();
     window.addEventListener('resize', resizeText);
     return () => window.removeEventListener('resize', resizeText);
-  }, [text, resizeText]);
+  }, [text]);
 
   return (
     <div
-      className='flex flex-col w-full items-center overflow-hidden leading-tight'
       ref={containerRef}
+      className='flex flex-col w-full items-center overflow-hidden leading-tight'
     >
       <span className='sr-only'>{text}</span>
       <motion.span
         aria-hidden='true'
         initial='hidden'
-        animate='visible'
-        className='mx-auto whitespace-normal sm:whitespace-nowrap text-left sm:text-center font-bold uppercase text-green-700 sm:text-purple-600 md:text-blue-500 lg:text-silver font-sans px-2 xl:text-amber-600'
+        animate={controls}
+        variants={defaultVariants}
+        className='mx-auto whitespace-normal sm:whitespace-nowrap text-left sm:text-center font-bold uppercase font-monospace px-2 text-orange-peel'
         ref={textRef}
       >
-        {text.split(' ').map((word, index) => (
-          <span key={index}>
-            <motion.span key={word} variants={staggerText} ref={textRef}>
+        {text.split(' ').map((word, index, array) => (
+          <>
+            <motion.span key={index} variants={defaultVariants}>
               {word}
             </motion.span>
-
-            {index === 0 && <span className='inline-block'>&nbsp;</span>}
-          </span>
+            {index < array.length - 1 && <span>&nbsp;</span>}
+          </>
         ))}
       </motion.span>
     </div>
   );
 };
+
+export default ScreenFitText;

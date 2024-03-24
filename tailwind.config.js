@@ -8,10 +8,12 @@ export default {
         'dark-green': '#033525',
         silver: '#DEE2E6',
         'light-green': '#0ccf91',
+        'orange-peel': '#FAA23D',
       },
       fontFamily: {
         sans: ['Lexend', 'sans-serif'],
         serif: ['Zilla Slab', 'serif'],
+        monospace: ['Space Mono', 'monospace'],
       },
       borderRadius: {
         'many-big': '4rem',
