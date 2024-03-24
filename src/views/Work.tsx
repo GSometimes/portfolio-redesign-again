@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import ScreenFitText from '../components/textfit/ScreeFitText';
 
 // will need to fix bug where animation can potentially get triggered when empty space is in view
