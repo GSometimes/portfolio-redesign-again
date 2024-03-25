@@ -118,7 +118,6 @@ const Nav = () => {
             <Link
               to='work'
               smooth={true}
-              offset={50}
               duration={0}
               className='w-full text-center'
             >
