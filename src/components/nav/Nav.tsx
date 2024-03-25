@@ -110,7 +110,7 @@ const Nav = () => {
           animate='visible'
         >
           <motion.li
-            className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-4'
+            className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-2.5 sm:p-4'
             whileHover={{ scale: 0.98 }}
             whileTap={{ scale: 0.95 }}
             variants={itemVariants}
@@ -118,6 +118,7 @@ const Nav = () => {
             <Link
               to='work'
               smooth={true}
+              offset={-50}
               duration={0}
               className='w-full text-center'
             >
@@ -125,7 +126,7 @@ const Nav = () => {
             </Link>
           </motion.li>
           <motion.li
-            className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-4'
+            className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-2.5 sm:p-4'
             whileHover={{ scale: 0.98 }}
             whileTap={{ scale: 0.95 }}
             variants={itemVariants}
@@ -135,7 +136,7 @@ const Nav = () => {
             </Link>
           </motion.li>
           <motion.li
-            className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-4'
+            className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-2.5 sm:p-4'
             whileHover={{ scale: 0.98 }}
             whileTap={{ scale: 0.95 }}
             variants={itemVariants}
@@ -212,9 +213,9 @@ const Nav = () => {
             variants={fixedNavVariants}
             className='fixed z-50 px-4 py-2 rounded-3xl left-1/2 top-2.5 bg-black/75 backdrop-blur-3xl text-silver outline'
           >
-            <ul className='flex items-center gap-4 font-monospace font-bold'>
+            <ul className='flex items-center justify-center gap-4 font-monospace font-bold'>
               <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
-                <Link to='work' smooth={true} offset={50} duration={0}>
+                <Link to='work' smooth={true} offset={-50} duration={0}>
                   Work
                 </Link>
               </li>
