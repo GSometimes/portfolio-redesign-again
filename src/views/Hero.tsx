@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section className='text-silver min-h-dvh h-screen flex flex-col items-center justify-between'>
+    <section className='text-silver h-[100dvh] flex flex-col items-center justify-between'>
       <motion.div
         variants={containerVariants}
         initial='hidden'

@@ -8,7 +8,7 @@ const Work = () => {
   return (
     <section
       id='work'
-      className='text-silver h-screen flex flex-col items-center justify-between'
+      className='text-silver h-[100dvh] flex flex-col items-center justify-between'
     >
       <div className='w-full'>
         <ScreenFitText
