@@ -1,33 +1,15 @@
 import { AnimatePresence, motion, Variants } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-scroll';
 
 const Nav = () => {
   const [scrolling, setScrolling] = useState<boolean>(false);
-  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
 
   const handleScroll = () => {
     setScrolling(window.scrollY >= window.innerHeight);
   };
 
-  const handleResize = () => {
-    setScreenWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup function to remove event listeners
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const getScrollDuration = () => {
-    return screenWidth <= 768 ? 500 : 0;
-  };
+  window.addEventListener('scroll', handleScroll);
 
   const containerVariants: Variants = {
     hidden: { opacity: 1 },
