@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 // import { useMediaQuery } from '../../utils/useMediaQuery';
 import { useState } from 'react';
+import { Link } from 'react-scroll';
 
 const Nav = () => {
   // const matches = useMediaQuery('(min-width: 1536px)');
@@ -109,28 +110,36 @@ const Nav = () => {
           animate='visible'
         >
           <motion.li
-            className='w-full md:w-1/3 outline text-silver  flex items-center justify-center relative text-2xl md:text-3xl lg:text-5xl xl:text-7xl p-4 font-black tracking-wide hover:text-orange-peel rounded-3xl'
+            className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-4'
             whileHover={{ scale: 0.98 }}
             whileTap={{ scale: 0.95 }}
             variants={itemVariants}
           >
-            Work
+            <Link
+              to='work'
+              smooth={true}
+              offset={50}
+              duration={0}
+              className='w-full text-center'
+            >
+              Work
+            </Link>
           </motion.li>
           <motion.li
-            className='w-full md:w-1/3  outline text-silver  flex items-center justify-center relative text-2xl md:text-3xl lg:text-5xl xl:text-7xl p-4 font-black tracking-wide hover:text-orange-peel rounded-3xl'
+            className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-4'
             whileHover={{ scale: 0.98 }}
             whileTap={{ scale: 0.95 }}
             variants={itemVariants}
           >
-            About
+            <Link className='w-full text-center'>About</Link>
           </motion.li>
           <motion.li
-            className='w-full md:w-1/3  outline text-silver  flex items-center justify-center relative text-2xl md:text-3xl lg:text-5xl xl:text-7xl p-4 font-black tracking-wide hover:text-orange-peel rounded-3xl'
+            className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-4'
             whileHover={{ scale: 0.98 }}
             whileTap={{ scale: 0.95 }}
             variants={itemVariants}
           >
-            Contact
+            <Link className='w-full text-center'>Contact</Link>
           </motion.li>
         </motion.ul>
       </nav>
@@ -164,7 +173,7 @@ const Nav = () => {
             animate='visible'
           >
             <motion.li
-              className='w-full lg:w-40 outline text-silver flex items-center justify-center relative text-lg sm:text-2xl md:text-3xl p-2 sm:p-4 font-black tracking-normal hover:text-orange-peel rounded-3xl'
+              className='w-full lg:w-40 outline text-silver flex items-center justify-center text-lg sm:text-2xl md:text-3xl p-2 sm:p-4 font-black tracking-normal hover:text-orange-peel rounded-3xl'
               whileHover={{ scale: 0.98 }}
               whileTap={{ scale: 0.95 }}
               variants={itemVariants}
@@ -172,7 +181,7 @@ const Nav = () => {
               Work
             </motion.li>
             <motion.li
-              className='w-full lg:w-40 outline text-silver flex items-center justify-center relative text-lg sm:text-2xl md:text-3xl p-2 sm:p-4 font-black tracking-normal hover:text-orange-peel rounded-3xl'
+              className='w-full lg:w-40 outline text-silver flex items-center justify-center text-lg sm:text-2xl md:text-3xl p-2 sm:p-4 font-black tracking-normal hover:text-orange-peel rounded-3xl'
               whileHover={{ scale: 0.98 }}
               whileTap={{ scale: 0.95 }}
               variants={itemVariants}
@@ -180,7 +189,7 @@ const Nav = () => {
               About
             </motion.li>
             <motion.li
-              className='w-full lg:w-40 outline text-silver flex items-center justify-center relative text-lg sm:text-2xl md:text-3xl p-2 sm:p-4 font-black tracking-normal hover:text-orange-peel rounded-3xl'
+              className='w-full lg:w-40 outline text-silver flex items-center justify-center text-lg sm:text-2xl md:text-3xl p-2 sm:p-4 font-black tracking-normal hover:text-orange-peel rounded-3xl'
               whileHover={{ scale: 0.98 }}
               whileTap={{ scale: 0.95 }}
               variants={itemVariants}
@@ -198,11 +207,13 @@ const Nav = () => {
             animate='animate'
             exit='exit'
             variants={fixedNavVariants}
-            className='fixed z-50 px-4 py-2 rounded-3xl left-1/2 top-5 bg-black/75 text-silver outline'
+            className='fixed z-50 px-4 py-2 rounded-3xl left-1/2 top-2.5 bg-black/75 backdrop-blur-3xl text-silver outline'
           >
             <ul className='flex items-center gap-4 font-monospace font-bold'>
-              <li className='px-2 hover:text-orange-peel transition-all duration-200'>
-                Work
+              <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
+                <Link to='work' smooth={true} offset={50} duration={0}>
+                  Work
+                </Link>
               </li>
               <li className='px-2 hover:text-orange-peel transition-all duration-200'>
                 About

@@ -12,11 +12,6 @@ const ScreenFitText = ({ text, variants }: ScreenFitTextProps) => {
   const textRef = useRef<HTMLSpanElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.5 });
 
-  // const fadeInText = {
-  //   hidden: { opacity: 0 },
-  //   visible: { opacity: 1, transition: { duration: 2, ease: 'easeInOut' } },
-  // };
-
   const defaultVariants = variants;
 
   useEffect(() => {
@@ -49,7 +44,9 @@ const ScreenFitText = ({ text, variants }: ScreenFitTextProps) => {
   };
 
   useEffect(() => {
-    resizeText();
+    document.fonts.ready.then(() => {
+      resizeText();
+    });
     window.addEventListener('resize', resizeText);
     return () => window.removeEventListener('resize', resizeText);
   }, [text]);
@@ -65,7 +62,7 @@ const ScreenFitText = ({ text, variants }: ScreenFitTextProps) => {
       <motion.span
         aria-hidden='true'
         variants={defaultVariants}
-        className='mx-auto whitespace-normal sm:whitespace-nowrap text-left sm:text-center font-bold uppercase font-monospace px-2 text-orange-peel'
+        className='mx-auto whitespace-normal sm:whitespace-nowrap text-center sm:text-center font-bold uppercase font-monospace px-2 text-orange-peel'
         ref={textRef}
       >
         {text.split(' ').map((word, index, array) => (

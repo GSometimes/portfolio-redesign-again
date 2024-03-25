@@ -19,24 +19,24 @@ const Hero = () => {
   };
 
   return (
-    <section className='text-silver min-h-dvh flex flex-col items-center justify-between'>
+    <section className='text-silver h-screen flex flex-col items-center justify-between'>
       <motion.div
         variants={containerVariants}
         initial='hidden'
         animate='show'
-        className='w-full flex flex-col items-start justify-center gap-2 sm:gap-4 font-monospace'
+        className='w-full h-1/2 flex flex-col items-start justify-center gap-2 sm:gap-4 font-monospace'
       >
-        <motion.div variants={itemVariants} className='h-full w-full'>
+        <motion.div variants={itemVariants} className='w-full'>
           <ScreenFitText text='Gore Auluck' />
         </motion.div>
         <motion.p
-          className='text-lg sm:text-2xl lg:text-4xl px-2 sm:px-6 font-bold'
+          className='text-lg sm:text-2xl lg:text-4xl px-4 sm:px-6 lg:px-8 font-bold'
           variants={itemVariants}
         >
           Developing your window to the web.
         </motion.p>
         <motion.p
-          className='text-sm sm:text-base px-2 sm:px-6 max-w-[768px]'
+          className='text-sm sm:text-base px-4 sm:px-6 lg:px-8 max-w-[768px]'
           variants={itemVariants}
         >
           I'm a frontend developer with a culinary background, blending 10 years

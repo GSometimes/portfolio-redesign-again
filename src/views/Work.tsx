@@ -6,8 +6,11 @@ import ScreenFitText from '../components/textfit/ScreeFitText';
 
 const Work = () => {
   return (
-    <section className='text-silver min-h-dvh flex flex-col items-center justify-between'>
-      <div className='w-full flex flex-col items-start justify-center gap-2 sm:gap-0'>
+    <section
+      id='work'
+      className='text-silver h-screen flex flex-col items-center justify-between'
+    >
+      <div className='w-full'>
         <ScreenFitText
           text='Recent Work'
           variants={{
