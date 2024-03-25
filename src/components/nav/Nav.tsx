@@ -131,7 +131,9 @@ const Nav = () => {
             whileTap={{ scale: 0.95 }}
             variants={itemVariants}
           >
-            <Link className='w-full text-center'>About</Link>
+            <Link to='' className='w-full text-center'>
+              About
+            </Link>
           </motion.li>
           <motion.li
             className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-4'
@@ -139,7 +141,9 @@ const Nav = () => {
             whileTap={{ scale: 0.95 }}
             variants={itemVariants}
           >
-            <Link className='w-full text-center'>Contact</Link>
+            <Link to='' className='w-full text-center'>
+              Contact
+            </Link>
           </motion.li>
         </motion.ul>
       </nav>
