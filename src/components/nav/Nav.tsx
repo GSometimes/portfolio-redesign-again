@@ -26,7 +26,7 @@ const Nav = () => {
   }, []);
 
   const getScrollDuration = () => {
-    return screenWidth <= 768 ? 250 : 0;
+    return screenWidth <= 768 ? 500 : 0;
   };
 
   const containerVariants: Variants = {
@@ -129,7 +129,12 @@ const Nav = () => {
           >
             <ul className='flex items-center justify-center gap-4 font-monospace font-bold'>
               <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
-                <Link to='work' smooth={true} offset={-50} duration={0}>
+                <Link
+                  to='work'
+                  smooth={true}
+                  offset={-50}
+                  duration={getScrollDuration()}
+                >
                   Work
                 </Link>
               </li>
