@@ -1,45 +1,35 @@
-import { AnimatePresence, motion } from 'framer-motion';
-// import { useMediaQuery } from '../../utils/useMediaQuery';
-import { useState } from 'react';
+import { AnimatePresence, motion, Variants } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 
 const Nav = () => {
-  // const matches = useMediaQuery('(min-width: 1536px)');
-  // const oneLiner = 'Frontend developer with three years of experience.';
   const [scrolling, setScrolling] = useState<boolean>(false);
+  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
 
   const handleScroll = () => {
-    if (window.scrollY >= window.innerHeight) {
-      setScrolling(true);
-    } else {
-      setScrolling(false);
-    }
+    setScrolling(window.scrollY >= window.innerHeight);
   };
 
-  window.addEventListener('scroll', handleScroll);
+  const handleResize = () => {
+    setScreenWidth(window.innerWidth);
+  };
 
-  // // one liner variant
-  // const sentence = {
-  //   hidden: { opacity: 0 },
-  //   visible: {
-  //     opacity: 1,
-  //     transition: {
-  //       delay: 0.2,
-  //       staggerChildren: 0.06,
-  //     },
-  //   },
-  // };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
 
-  // const letter = {
-  //   hidden: { opacity: 0 },
-  //   visible: {
-  //     opacity: 1,
-  //     transition: { duration: 0.5, ease: 'easeInOut' },
-  //   },
-  // };
+    // Cleanup function to remove event listeners
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-  // nav items variant
-  const containerVariants = {
+  const getScrollDuration = () => {
+    return screenWidth <= 768 ? 250 : 0;
+  };
+
+  const containerVariants: Variants = {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
@@ -50,7 +40,7 @@ const Nav = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -58,8 +48,7 @@ const Nav = () => {
     },
   };
 
-  // fixed nav variants
-  const fixedNavVariants = {
+  const fixedNavVariants: Variants = {
     initial: {
       y: -50,
       x: '-50%',
@@ -83,26 +72,7 @@ const Nav = () => {
 
   return (
     <>
-      {/* Above 1536px styling */}
-      {/* {matches && ( */}
       <nav className='flex flex-row item-center justify-center w-full gap-2 p-4'>
-        {/* <motion.div
-            className='w-full md:w-2/5 flex items-center font-monospace tracking-normal sm:tracking-wide text-xl px-4'
-            variants={sentence}
-            initial='hidden'
-            animate='visible'
-          >
-            <span className='sr-only'>{oneLiner}</span>
-            {oneLiner.split('').map((char, index) => (
-              <motion.span
-                key={`${char} - ${index}`}
-                variants={letter}
-                aria-hidden='true'
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </motion.span>
-            ))}
-          </motion.div> */}
         <motion.ul
           className='w-full gap-8 flex flex-col md:flex-row items-center justify-evenly font-monospace'
           variants={containerVariants}
@@ -119,7 +89,7 @@ const Nav = () => {
               to='work'
               smooth={true}
               offset={-50}
-              duration={0}
+              duration={getScrollDuration()}
               className='w-full text-center'
             >
               Work
@@ -147,62 +117,6 @@ const Nav = () => {
           </motion.li>
         </motion.ul>
       </nav>
-      {/* )} */}
-
-      {/* Below 1536px styling */}
-      {/* {!matches && (
-        <nav className='flex flex-col lg:flex-row item-center justify-center w-full gap-4 sm:gap-6 px-2 py-4 mb-2 sm:mb-0'>
-          <motion.div
-            variants={sentence}
-            initial='hidden'
-            animate='visible'
-            className='flex items-center font-monospace tracking-normal sm:tracking-wide text-lg sm:text-xl px-0 sm:px-4 text-light-green w-full break-word flex-wrap'
-          >
-            <span className='sr-only'>{oneLiner}</span>
-            {oneLiner.split('').map((char, index) => (
-              <motion.span
-                key={`${char} - ${index}`}
-                variants={letter}
-                aria-hidden='true'
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </motion.span>
-            ))}
-          </motion.div>
-
-          <motion.ul
-            className='w-full gap-2 sm:gap-4 lg:gap-6 flex flex-row items-center justify-end font-monospace'
-            variants={containerVariants}
-            initial='hidden'
-            animate='visible'
-          >
-            <motion.li
-              className='w-full lg:w-40 outline text-silver flex items-center justify-center text-lg sm:text-2xl md:text-3xl p-2 sm:p-4 font-black tracking-normal hover:text-orange-peel rounded-3xl'
-              whileHover={{ scale: 0.98 }}
-              whileTap={{ scale: 0.95 }}
-              variants={itemVariants}
-            >
-              Work
-            </motion.li>
-            <motion.li
-              className='w-full lg:w-40 outline text-silver flex items-center justify-center text-lg sm:text-2xl md:text-3xl p-2 sm:p-4 font-black tracking-normal hover:text-orange-peel rounded-3xl'
-              whileHover={{ scale: 0.98 }}
-              whileTap={{ scale: 0.95 }}
-              variants={itemVariants}
-            >
-              About
-            </motion.li>
-            <motion.li
-              className='w-full lg:w-40 outline text-silver flex items-center justify-center text-lg sm:text-2xl md:text-3xl p-2 sm:p-4 font-black tracking-normal hover:text-orange-peel rounded-3xl'
-              whileHover={{ scale: 0.98 }}
-              whileTap={{ scale: 0.95 }}
-              variants={itemVariants}
-            >
-              Contact
-            </motion.li>
-          </motion.ul>
-        </nav>
-      )} */}
 
       {scrolling && (
         <AnimatePresence>
