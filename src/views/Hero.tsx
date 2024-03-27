@@ -1,4 +1,4 @@
-import { easeInOut, motion, Variants } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import Nav from '../components/nav/Nav';
 import ScreenFitText from '../components/textfit/ScreeFitText';
 
@@ -15,7 +15,11 @@ const Hero = () => {
 
   const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
-    show: { y: 0, opacity: 1, transition: { duration: 0.5, ease: easeInOut } },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: 'easeInOut' },
+    },
   };
 
   return (
@@ -26,7 +30,7 @@ const Hero = () => {
         animate='show'
         className='w-full h-1/2 flex flex-col items-start justify-center gap-2 sm:gap-4 font-monospace'
       >
-        <motion.div variants={itemVariants} className='w-full'>
+        <motion.div variants={itemVariants} className='w-full px-2'>
           <ScreenFitText text='Gore Auluck' />
         </motion.div>
         <motion.p

@@ -62,7 +62,7 @@ const ScreenFitText = ({ text, variants }: ScreenFitTextProps) => {
       <motion.span
         aria-hidden='true'
         variants={defaultVariants}
-        className='mx-auto whitespace-normal sm:whitespace-nowrap text-center sm:text-center font-bold uppercase font-monospace px-2 text-orange-peel'
+        className='mx-auto whitespace-normal sm:whitespace-nowrap text-center sm:text-center font-bold uppercase font-monospace text-orange-peel'
         ref={textRef}
       >
         {text.split(' ').map((word, index, array) => (
