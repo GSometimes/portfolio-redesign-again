@@ -1,19 +1,50 @@
-import { ProjectData } from '../../data/ProjectData';
-import { motion } from 'framer-motion';
+import { motion, Variants, useAnimation } from 'framer-motion';
+import { useRef, useEffect } from 'react';
+import { useInView } from 'framer-motion';
 
-const Card = () => {
+type CardProps = {
+  title: string;
+  tech: string;
+  description: string;
+  link: string;
+};
+
+const Card = ({ title, tech, description, link }: CardProps) => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start('show');
+    }
+  }, [controls, isInView]);
+
+  const variants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: 'easeInOut' },
+    },
+  };
+
   return (
-    <motion.div className='w-full rounded-3xl py-10 px-5 sm:py-20 sm:px-10 outline font-monospace flex flex-col gap-4 hover:outline-orange-peel'>
+    <motion.div
+      ref={ref}
+      variants={variants}
+      initial='hidden'
+      animate={controls}
+      className='w-full rounded-3xl py-10 px-5 sm:py-20 sm:px-10 outline font-monospace flex flex-col gap-4 hover:outline-orange-peel'
+    >
       <div className='flex flex-col items-start gap-2 w-full'>
-        <p className='text-sm sm:text-base'>{ProjectData[0].tech}</p>
-        <h1 className='text-3xl font-bold text-orange-peel'>
-          {ProjectData[0].title}
-        </h1>
+        <p className='text-sm sm:text-base'>{tech}</p>
+        <h1 className='text-3xl font-bold text-orange-peel'>{title}</h1>
       </div>
       <div className='flex flex-col items-start text-base sm:text-xl gap-6 w-full'>
-        <p className=''>{ProjectData[0].description}</p>
+        <p>{description}</p>
         <motion.a
-          href={ProjectData[0].link}
+          href={link}
           target='_blank'
           rel='noreferrer'
           className='outline rounded-2xl text-xl p-4 hover:outline-orange-peel hover:text-orange-peel'

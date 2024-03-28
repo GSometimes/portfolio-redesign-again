@@ -1,4 +1,4 @@
-export type Project = {
+type Project = {
   title: string;
   tech: string;
   description: string;
@@ -8,7 +8,7 @@ export type Project = {
 export const ProjectData: Project[] = [
   {
     title: 'Code of the Undead: Firewall of Resilience',
-    tech: 'React, TypeScript, Tailwind CSS, Framer Motion',
+    tech: 'React, TypeScript, Tailwind CSS',
     description:
       'Created a lesson on state management with useState and useContext by constructing a dynamic navigation bar with React, TypeScript, Tailwind CSS, and Framer Motion for animations.',
     link: 'https://github.com/GSometimes/code-of-the-undead-react-context',

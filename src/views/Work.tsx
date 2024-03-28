@@ -1,11 +1,12 @@
 import Card from '../components/card/Card';
 import ScreenFitText from '../components/textfit/ScreeFitText';
+import { ProjectData } from '../data/ProjectData';
 
 const Work = () => {
   return (
     <section
       id='work'
-      className='text-silver h-[100dvh] flex flex-col items-center gap-4 sm:gap-8'
+      className='text-silver min-h-dvh flex flex-col items-center gap-4 sm:gap-8'
     >
       <div className='w-full px-2'>
         <ScreenFitText
@@ -20,8 +21,10 @@ const Work = () => {
           }}
         />
       </div>
-      <div className='w-full px-4 lg:px-8'>
-        <Card />
+      <div className='flex flex-col items-center gap-8 w-full px-4 lg:px-8 my-12 sm:my-24'>
+        {ProjectData.map((project, index) => (
+          <Card key={index} {...project} />
+        ))}
       </div>
     </section>
   );
