@@ -6,7 +6,7 @@ type CardProps = {
   title: string;
   tech: string;
   description: string;
-  link: string;
+  link?: string;
 };
 
 const Card = ({ title, tech, description, link }: CardProps) => {
@@ -43,16 +43,18 @@ const Card = ({ title, tech, description, link }: CardProps) => {
       </div>
       <div className='flex flex-col items-start text-base sm:text-xl gap-6 w-full'>
         <p>{description}</p>
-        <motion.a
-          href={link}
-          target='_blank'
-          rel='noreferrer'
-          className='outline rounded-2xl text-xl p-4 hover:outline-orange-peel hover:text-orange-peel'
-          whileHover={{ scale: 0.98 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          View Lesson
-        </motion.a>
+        {link && (
+          <motion.a
+            href={link}
+            target='_blank'
+            rel='noreferrer'
+            className='outline rounded-2xl text-xl p-4 hover:outline-orange-peel hover:text-orange-peel'
+            whileHover={{ scale: 0.98 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            View Lesson
+          </motion.a>
+        )}
       </div>
     </motion.div>
   );

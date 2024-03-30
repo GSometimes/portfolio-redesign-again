@@ -2,10 +2,10 @@ type Project = {
   title: string;
   tech: string;
   description: string;
-  link: string;
+  link?: string;
 };
 
-export const ProjectData: Project[] = [
+export const RecentWorkData: Project[] = [
   {
     title: 'Code of the Undead: Firewall of Resilience',
     tech: 'React, TypeScript, Tailwind CSS',
@@ -28,4 +28,24 @@ export const ProjectData: Project[] = [
     link: 'https://github.com/GSometimes/food-friends-memories-design-challenge',
   },
 ];
-``;
+
+export const FutureWorkData: Project[] = [
+  {
+    title: 'Seeker AI: Know the Who, Let Seeker Find the What',
+    tech: 'OpenAI, MERN, TypeScript, Tailwind CSS',
+    description:
+      'Developing an AI shopping assistant blending OpenAI with the MERN Stack to effortlessly connect you with products and services tailored just for you.',
+  },
+  {
+    title: 'Side Chick: Indulge in the Other Side of Sunday',
+    tech: 'Cheerio, MERN, TypeScript, Tailwind CSS',
+    description:
+      'Designing a concept site for a popup restaurant named "Side Chick", which adds a tantalizing twist to traditional dining as it only opens on Sundays.',
+  },
+  {
+    title: 'NoBSipes: Recipes without the Ramble',
+    tech: 'MERN, TypeScript, Tailwind CSS',
+    description:
+      'Developing a web scraper using Cheerio and MERN to neatly extract and display the ingredients, directions, and image from recipe websites, eliminating the extra fluff.',
+  },
+];
