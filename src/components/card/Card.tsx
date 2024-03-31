@@ -12,7 +12,7 @@ type CardProps = {
 const Card = ({ title, tech, description, link }: CardProps) => {
   const controls = useAnimation();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, amount: 0.33 });
 
   useEffect(() => {
     if (isInView) {
@@ -25,7 +25,7 @@ const Card = ({ title, tech, description, link }: CardProps) => {
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: 'easeInOut' },
+      transition: { duration: 0.65, ease: 'easeInOut' },
     },
   };
 

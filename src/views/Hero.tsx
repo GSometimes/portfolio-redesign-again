@@ -43,8 +43,8 @@ const Hero = () => {
           className='text-sm sm:text-base px-4 sm:px-6 lg:px-8 max-w-[768px]'
           variants={itemVariants}
         >
-          I'm a frontend developer with a culinary background, blending 10 years
-          of culinary creativity with 3 years of tech.
+          From kitchen to code, I'm a frontend developer blending three years of
+          experience in tech with a decade of culinary creativity.
         </motion.p>
       </motion.div>
       <Nav />

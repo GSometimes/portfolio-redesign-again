@@ -74,7 +74,7 @@ const Nav = () => {
             <Link
               to='work'
               smooth={true}
-              offset={-50}
+              // offset={-50}
               duration={500}
               className='w-full text-center'
             >
@@ -87,7 +87,13 @@ const Nav = () => {
             whileTap={{ scale: 0.95 }}
             variants={itemVariants}
           >
-            <Link to='' className='w-full text-center'>
+            <Link
+              to='about'
+              smooth={true}
+              // offset={-50}
+              duration={500}
+              className='w-full text-center'
+            >
               About
             </Link>
           </motion.li>
@@ -111,17 +117,19 @@ const Nav = () => {
             animate='animate'
             exit='exit'
             variants={fixedNavVariants}
-            className='fixed z-50 px-4 py-2 rounded-3xl left-1/2 top-2.5 bg-black/75 backdrop-blur-3xl text-silver outline'
+            className='fixed z-50 px-4 py-2 rounded-3xl left-1/2 top-5 bg-black/75 backdrop-blur-3xl text-silver outline'
             aria-labelledby='fixed-nav'
           >
             <ul className='flex items-center justify-center gap-4 font-monospace font-bold'>
               <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
-                <Link to='work' smooth={true} offset={-50} duration={500}>
+                <Link to='work' smooth={true} duration={500}>
                   Work
                 </Link>
               </li>
-              <li className='px-2 hover:text-orange-peel transition-all duration-200'>
-                About
+              <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
+                <Link to='about' smooth={true} duration={500}>
+                  About
+                </Link>
               </li>
               <li className='px-2 hover:text-orange-peel transition-all duration-200'>
                 Contact
