@@ -14,7 +14,7 @@ const Hero = () => {
   };
 
   const heroItemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { opacity: 0, y: 20 },
     show: {
       y: 0,
       opacity: 1,
