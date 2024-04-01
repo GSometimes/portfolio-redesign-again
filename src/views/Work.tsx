@@ -12,11 +12,11 @@ const Work = () => {
         <ScreenFitText
           text='Recent Work'
           variants={{
-            hidden: { y: 20, opacity: 0 },
+            hidden: { y: 50, opacity: 0 },
             visible: {
               y: 0,
               opacity: 1,
-              transition: { duration: 0.5, ease: 'easeInOut' },
+              transition: { duration: 0.75, ease: 'easeInOut' },
             },
           }}
         />
@@ -30,11 +30,11 @@ const Work = () => {
         <ScreenFitText
           text='Future Work'
           variants={{
-            hidden: { y: 20, opacity: 0 },
+            hidden: { y: 50, opacity: 0 },
             visible: {
               y: 0,
               opacity: 1,
-              transition: { duration: 0.5, ease: 'easeInOut' },
+              transition: { duration: 0.75, ease: 'easeInOut' },
             },
           }}
         />

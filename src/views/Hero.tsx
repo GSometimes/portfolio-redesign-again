@@ -3,7 +3,7 @@ import Nav from '../components/nav/Nav';
 import ScreenFitText from '../components/textfit/ScreeFitText';
 
 const Hero = () => {
-  const containerVariants: Variants = {
+  const heroContainerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -13,35 +13,35 @@ const Hero = () => {
     },
   };
 
-  const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
+  const heroItemVariants: Variants = {
+    hidden: { y: 50, opacity: 0 },
     show: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.5, ease: 'easeInOut' },
+      transition: { duration: 0.75, ease: 'easeInOut' },
     },
   };
 
   return (
     <section className='text-silver h-[100dvh] flex flex-col items-center justify-between'>
       <motion.div
-        variants={containerVariants}
+        variants={heroContainerVariants}
         initial='hidden'
         animate='show'
         className='w-full h-1/2 flex flex-col items-start justify-center gap-2 sm:gap-4 font-monospace'
       >
-        <motion.div variants={itemVariants} className='w-full px-2'>
+        <motion.div variants={heroItemVariants} className='w-full px-2'>
           <ScreenFitText text='Gore Auluck' />
         </motion.div>
         <motion.p
-          className='text-xl sm:text-2xl lg:text-4xl px-4 sm:px-6 lg:px-8 font-bold'
-          variants={itemVariants}
+          className='text-lg sm:text-2xl lg:text-4xl px-4 sm:px-6 lg:px-8 font-bold'
+          variants={heroItemVariants}
         >
           Developing your window to the web.
         </motion.p>
         <motion.p
-          className='text-sm sm:text-base md:text-lg px-4 sm:px-6 lg:px-8 max-w-[1024px]'
-          variants={itemVariants}
+          className='text-sm sm:text-base md:text-lg px-4 sm:px-6 lg:px-8 max-w-[1280px]'
+          variants={heroItemVariants}
         >
           From the kitchen to coding, I'm a frontend developer blending three
           years of experience in tech with a decade of culinary creativity. I
