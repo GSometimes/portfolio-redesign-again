@@ -1,10 +1,8 @@
-import { motion, useAnimation, Variants } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import Nav from '../components/nav/Nav';
 import ScreenFitText from '../components/textfit/ScreeFitText';
-import { useEffect } from 'react';
 
 const Hero = () => {
-  const controls = useAnimation();
   const heroContainerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
@@ -24,16 +22,12 @@ const Hero = () => {
     },
   };
 
-  useEffect(() => {
-    controls.start('show');
-  }, [controls]);
-
   return (
     <section className='text-silver h-[100dvh] flex flex-col items-center justify-between'>
       <motion.div
         variants={heroContainerVariants}
         initial='hidden'
-        animate={controls}
+        animate='show'
         className='w-full h-1/2 flex flex-col items-start justify-center gap-2 sm:gap-4 font-monospace'
       >
         <motion.div variants={heroItemVariants} className='w-full px-2'>
