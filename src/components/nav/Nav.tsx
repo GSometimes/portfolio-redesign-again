@@ -22,7 +22,7 @@ const Nav = () => {
     },
   };
 
-  const itemVariants: Variants = {
+  const navItemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -69,7 +69,7 @@ const Nav = () => {
             className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-2.5 sm:p-4'
             whileHover={{ scale: 0.98 }}
             whileTap={{ scale: 0.95 }}
-            variants={itemVariants}
+            variants={navItemVariants}
           >
             <Link
               to='work'
@@ -84,7 +84,7 @@ const Nav = () => {
             className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-2.5 sm:p-4'
             whileHover={{ scale: 0.98 }}
             whileTap={{ scale: 0.95 }}
-            variants={itemVariants}
+            variants={navItemVariants}
           >
             <Link
               to='about'
@@ -99,7 +99,7 @@ const Nav = () => {
             className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-2.5 sm:p-4'
             whileHover={{ scale: 0.98 }}
             whileTap={{ scale: 0.95 }}
-            variants={itemVariants}
+            variants={navItemVariants}
           >
             <Link to='' className='w-full text-center'>
               Contact

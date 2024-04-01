@@ -19,7 +19,7 @@ const Paragraph = ({ text }: ParagraphProps) => {
     }
   }, [controls, isInView]);
 
-  const variants: Variants = {
+  const paragraphVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     show: {
       opacity: 1,
@@ -29,7 +29,12 @@ const Paragraph = ({ text }: ParagraphProps) => {
   };
 
   return (
-    <motion.p ref={ref} variants={variants} initial='hidden' animate={controls}>
+    <motion.p
+      ref={ref}
+      variants={paragraphVariants}
+      initial='hidden'
+      animate={controls}
+    >
       {text}
     </motion.p>
   );

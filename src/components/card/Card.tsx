@@ -20,7 +20,7 @@ const Card = ({ title, tech, description, link }: CardProps) => {
     }
   }, [controls, isInView]);
 
-  const variants: Variants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     show: {
       opacity: 1,
@@ -32,7 +32,7 @@ const Card = ({ title, tech, description, link }: CardProps) => {
   return (
     <motion.div
       ref={ref}
-      variants={variants}
+      variants={cardVariants}
       initial='hidden'
       animate={controls}
       className='w-full rounded-3xl py-10 px-5 sm:py-20 sm:px-10 outline font-monospace flex flex-col gap-4 hover:outline-orange-peel'
