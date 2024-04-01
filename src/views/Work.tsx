@@ -21,7 +21,7 @@ const Work = () => {
           }}
         />
       </div>
-      <div className='flex flex-col items-center gap-8 w-full px-4 lg:px-8 my-12 sm:my-24'>
+      <div className='flex flex-col items-center gap-8 w-full px-4 lg:px-8 my-16 sm:my-32 lg:my-48'>
         {RecentWorkData.map((work, index) => (
           <Card key={index} {...work} />
         ))}
@@ -39,7 +39,7 @@ const Work = () => {
           }}
         />
       </div>
-      <div className='flex flex-col items-center gap-8 w-full px-4 lg:px-8 my-12 sm:my-24'>
+      <div className='flex flex-col items-center gap-8 w-full px-4 lg:px-8 my-16 sm:my-32 lg:my-48'>
         {FutureWorkData.map((work, index) => (
           <Card key={index} {...work} />
         ))}

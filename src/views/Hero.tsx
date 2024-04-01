@@ -34,22 +34,24 @@ const Hero = () => {
           <ScreenFitText text='Gore Auluck' />
         </motion.div>
         <motion.p
-          className='text-lg sm:text-2xl lg:text-4xl px-4 sm:px-6 lg:px-8 font-bold'
+          className='text-xl sm:text-2xl lg:text-4xl px-4 sm:px-6 lg:px-8 font-bold'
           variants={itemVariants}
         >
           Developing your window to the web.
         </motion.p>
         <motion.p
-          className='text-sm sm:text-base px-4 sm:px-6 lg:px-8 max-w-[768px]'
+          className='text-sm sm:text-base md:text-lg px-4 sm:px-6 lg:px-8 max-w-[1024px]'
           variants={itemVariants}
         >
-          From kitchen to code, I'm a frontend developer blending three years of
-          experience in tech with a decade of culinary creativity.
+          From the kitchen to coding, I'm a frontend developer blending three
+          years of experience in tech with a decade of culinary creativity. I
+          love diving into new things and adding my own touch to whatever I work
+          on. I'm all about getting better, being creative, and helping out
+          where I can.
         </motion.p>
       </motion.div>
       <Nav />
     </section>
   );
 };
-
 export default Hero;

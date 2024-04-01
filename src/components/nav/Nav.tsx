@@ -74,8 +74,7 @@ const Nav = () => {
             <Link
               to='work'
               smooth={true}
-              // offset={-50}
-              duration={500}
+              duration={750}
               className='w-full text-center'
             >
               Work
@@ -90,7 +89,6 @@ const Nav = () => {
             <Link
               to='about'
               smooth={true}
-              // offset={-50}
               duration={500}
               className='w-full text-center'
             >

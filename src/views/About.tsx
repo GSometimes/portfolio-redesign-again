@@ -1,4 +1,6 @@
 import ScreenFitText from '../components/textfit/ScreeFitText';
+import { aboutData } from '../data/AboutData';
+import AnimatedParagraph from '../components/paragraph/Paragraph';
 
 const About = () => {
   return (
@@ -18,6 +20,11 @@ const About = () => {
             },
           }}
         />
+      </div>
+      <div className='text-base sm:text-lg md:text-xl font-monospace flex flex-col items-center gap-12 px-4 sm:px-6 lg:px-8 my-16 sm:my-32 lg:my-48'>
+        {aboutData.map((paragraph, index) => (
+          <AnimatedParagraph key={index} text={paragraph.text} />
+        ))}
       </div>
     </section>
   );

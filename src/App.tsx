@@ -4,7 +4,7 @@ import Work from './views/Work';
 
 function App() {
   return (
-    <div className='min-h-dvh w-full bg-black cursor-potato'>
+    <div className='min-h-dvh w-full bg-black space-y-16'>
       <Hero />
       <About />
       <Work />
