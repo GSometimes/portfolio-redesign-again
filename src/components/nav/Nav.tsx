@@ -23,11 +23,11 @@ const Nav = () => {
   };
 
   const itemVariants: Variants = {
-    hidden: { y: 50, opacity: 0 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.75, ease: 'easeInOut' },
+      transition: { duration: 0.65, ease: 'easeInOut' },
     },
   };
 

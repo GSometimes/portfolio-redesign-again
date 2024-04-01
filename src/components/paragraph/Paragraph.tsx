@@ -20,11 +20,11 @@ const Paragraph = ({ text }: ParagraphProps) => {
   }, [controls, isInView]);
 
   const variants: Variants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 20 },
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.75, ease: 'easeInOut' },
+      transition: { duration: 0.65, ease: 'easeInOut' },
     },
   };
 

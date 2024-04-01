@@ -1,6 +1,6 @@
 import ScreenFitText from '../components/textfit/ScreeFitText';
 import { aboutData } from '../data/AboutData';
-import AnimatedParagraph from '../components/paragraph/Paragraph';
+import Paragraph from '../components/paragraph/Paragraph';
 
 const About = () => {
   return (
@@ -12,18 +12,18 @@ const About = () => {
         <ScreenFitText
           text='Story Of Me'
           variants={{
-            hidden: { y: 50, opacity: 0 },
+            hidden: { y: 20, opacity: 0 },
             visible: {
               y: 0,
               opacity: 1,
-              transition: { duration: 0.75, ease: 'easeInOut' },
+              transition: { duration: 0.65, ease: 'easeInOut' },
             },
           }}
         />
       </div>
       <div className='text-base sm:text-lg md:text-xl font-monospace flex flex-col items-center gap-12 px-4 sm:px-6 lg:px-8 my-16 sm:my-32 lg:my-48'>
         {aboutData.map((paragraph, index) => (
-          <AnimatedParagraph key={index} text={paragraph.text} />
+          <Paragraph key={index} text={paragraph.text} />
         ))}
       </div>
     </section>
