@@ -1,4 +1,3 @@
-import React from 'react';
 import ScreenFitText from '../components/textfit/ScreeFitText';
 
 const Contact = () => {
