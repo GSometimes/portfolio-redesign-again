@@ -9,12 +9,13 @@ const Hero = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.25,
+        ease: 'easeInOut',
       },
     },
   };
 
   const heroItemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { y: 20, opacity: 0 },
     show: {
       y: 0,
       opacity: 1,

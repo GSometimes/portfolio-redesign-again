@@ -1,4 +1,5 @@
 import About from './views/About';
+import Contact from './views/Contact';
 import Hero from './views/Hero';
 import Work from './views/Work';
 
@@ -8,6 +9,7 @@ function App() {
       <Hero />
       <About />
       <Work />
+      <Contact />
     </div>
   );
 }

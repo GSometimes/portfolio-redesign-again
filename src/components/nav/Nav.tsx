@@ -65,46 +65,51 @@ const Nav = () => {
           initial='hidden'
           animate='visible'
         >
-          <motion.li
-            className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-2.5 sm:p-4'
-            whileHover={{ scale: 0.98 }}
-            whileTap={{ scale: 0.95 }}
-            variants={navItemVariants}
+          <Link
+            to='about'
+            smooth={true}
+            duration={500}
+            className='w-full md:w-1/3 text-center'
           >
-            <Link
-              to='work'
-              smooth={true}
-              duration={750}
-              className='w-full text-center'
-            >
-              Work
-            </Link>
-          </motion.li>
-          <motion.li
-            className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-2.5 sm:p-4'
-            whileHover={{ scale: 0.98 }}
-            whileTap={{ scale: 0.95 }}
-            variants={navItemVariants}
-          >
-            <Link
-              to='about'
-              smooth={true}
-              duration={500}
-              className='w-full text-center'
+            <motion.li
+              className='w-full  text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-2.5 sm:p-4'
+              whileHover={{ scale: 0.98 }}
+              whileTap={{ scale: 0.95 }}
+              variants={navItemVariants}
             >
               About
-            </Link>
-          </motion.li>
-          <motion.li
-            className='w-full md:w-1/3 text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-2.5 sm:p-4'
-            whileHover={{ scale: 0.98 }}
-            whileTap={{ scale: 0.95 }}
-            variants={navItemVariants}
+            </motion.li>
+          </Link>
+          <Link
+            to='work'
+            smooth={true}
+            duration={750}
+            className='w-full md:w-1/3 text-center'
           >
-            <Link to='' className='w-full text-center'>
+            <motion.li
+              className='w-full text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-2.5 sm:p-4'
+              whileHover={{ scale: 0.98 }}
+              whileTap={{ scale: 0.95 }}
+              variants={navItemVariants}
+            >
+              Work
+            </motion.li>
+          </Link>
+          <Link
+            to='contact'
+            smooth={true}
+            duration={1000}
+            className='w-full md:w-1/3 text-center'
+          >
+            <motion.li
+              className='w-full  text-silver flex items-center justify-center text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-black tracking-wide hover:text-orange-peel outline rounded-3xl cursor-pointer p-2.5 sm:p-4'
+              whileHover={{ scale: 0.98 }}
+              whileTap={{ scale: 0.95 }}
+              variants={navItemVariants}
+            >
               Contact
-            </Link>
-          </motion.li>
+            </motion.li>
+          </Link>
         </motion.ul>
       </nav>
 
@@ -119,19 +124,21 @@ const Nav = () => {
             aria-labelledby='fixed-nav'
           >
             <ul className='flex items-center justify-center gap-4 font-monospace font-bold'>
-              <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
-                <Link to='work' smooth={true} duration={500}>
+              <Link to='work' smooth={true} duration={625}>
+                <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
                   Work
-                </Link>
-              </li>
-              <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
-                <Link to='about' smooth={true} duration={500}>
+                </li>
+              </Link>
+              <Link to='about' smooth={true} duration={625}>
+                <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
                   About
-                </Link>
-              </li>
-              <li className='px-2 hover:text-orange-peel transition-all duration-200'>
-                Contact
-              </li>
+                </li>
+              </Link>
+              <Link to='contact' smooth={true} duration={625}>
+                <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
+                  Contact
+                </li>
+              </Link>
             </ul>
           </motion.nav>
         </AnimatePresence>

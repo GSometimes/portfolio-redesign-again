@@ -16,4 +16,8 @@ export const aboutData: About[] = [
     title: 'paragraph-3',
     text: "Outside of my professional life, I am a devoted dad, a loving puppy parent, a gamer, a foodie, and a wine enthusiast. My free time is spent enjoying walks with my dog Luna, hitting up the arcade with my son, and unwinding with a good movie and pizza night. I'm big into games like Destiny 2, Elden Ring, and Dead Island 2, they're my go to when I need an escape. I live by the motto, \"baby steps can move mountains,\" I'm all for celebrating the little wins and growing bit by bit, in life and at work.",
   },
+  {
+    title: 'paragraph-4',
+    text: 'Next Chapter.',
+  },
 ];
