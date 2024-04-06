@@ -1,3 +1,4 @@
+import ContactCard from '../components/card/ContactCard';
 import Paragraph from '../components/paragraph/Paragraph';
 import ScreenFitText from '../components/textfit/ScreeFitText';
 
@@ -27,12 +28,12 @@ const Contact = () => {
           </div>
           <Paragraph
             text={
-              "I'm searching for my next role in front-end development, ideally crafting and nurturing a component library for web or mobile. However, I'm open to any remote opportunity where I can flex my creative muscles and build solutions that reach and resonate with users. Beyond the code, I'm passionate about connecting with others in the tech community. Whether it's swapping stories about our tech journeys, discussing the latest in food or gaming, or exploring ways we can support each other's growth, I'm here for it. Let's chat about how we can create impactful work together and make our tech community a bit more connected."
+              "I am looking for my next opportunity in frontend development, ideally in a role where I'll be helping to build and maintain a component library for web or mobile, but I am open to any remote opportunity where I can be creative and impact a users experience directly. Beyond coding, I love chatting about tech, food, and games, and I'm always here to share a story or lend an ear. Let's connect and craft something amazing together. Drop me a line and let's chat!"
             }
           />
         </div>
       </div>
-      <div></div>
+      <ContactCard />
     </section>
   );
 };

@@ -1,4 +1,4 @@
-import Card from '../components/card/ProjectCard';
+import ProjectCard from '../components/card/ProjectCard';
 import ScreenFitText from '../components/textfit/ScreeFitText';
 import { RecentWorkData, FutureWorkData } from '../data/ProjectData';
 
@@ -23,7 +23,7 @@ const Work = () => {
       </div>
       <div className='flex flex-col items-center gap-8 w-full px-4 lg:px-8 my-16 sm:my-32 lg:my-48'>
         {RecentWorkData.map((work, index) => (
-          <Card key={index} {...work} />
+          <ProjectCard key={index} {...work} />
         ))}
       </div>
       <div className='w-full px-2'>
@@ -41,7 +41,7 @@ const Work = () => {
       </div>
       <div className='flex flex-col items-center gap-8 w-full px-4 lg:px-8 my-16 sm:my-32 lg:my-48'>
         {FutureWorkData.map((work, index) => (
-          <Card key={index} {...work} />
+          <ProjectCard key={index} {...work} />
         ))}
       </div>
     </section>
