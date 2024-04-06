@@ -23,9 +23,7 @@ const Contact = () => {
         </div>
         <div className='flex flex-col gap-8 max-w-[1280px] px-4 sm:px-6 lg:px-8 text-sm sm:text-base md:text-lg'>
           <div className='font-bold text-lg sm:text-2xl lg:text-4xl'>
-            <Paragraph
-              text={'On the Lookout for My Next Frontend Adventure!'}
-            />
+            <Paragraph text={'On the lookout for my next adventure!'} />
           </div>
           <Paragraph
             text={
@@ -34,9 +32,7 @@ const Contact = () => {
           />
         </div>
       </div>
-      <div>
-        
-      </div>
+      <div></div>
     </section>
   );
 };
