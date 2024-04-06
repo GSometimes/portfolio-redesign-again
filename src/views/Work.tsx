@@ -1,4 +1,4 @@
-import Card from '../components/card/Card';
+import Card from '../components/card/ProjectCard';
 import ScreenFitText from '../components/textfit/ScreeFitText';
 import { RecentWorkData, FutureWorkData } from '../data/ProjectData';
 
