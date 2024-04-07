@@ -6,7 +6,7 @@ const Work = () => {
   return (
     <section
       id='work'
-      className='text-silver h-full flex flex-col items-center gap-4 sm:gap-8'
+      className='text-silver min-h-screen flex flex-col items-center gap-4 sm:gap-8'
     >
       <div className='w-full px-2'>
         <ScreenFitText
@@ -21,7 +21,7 @@ const Work = () => {
           }}
         />
       </div>
-      <div className='flex flex-col items-center gap-8 w-full px-4 lg:px-8 my-16 sm:my-32 lg:my-48'>
+      <div className='flex flex-col items-center gap-8 w-full px-4 lg:px-8 my-8 sm:my-16 lg:my-24'>
         {RecentWorkData.map((work, index) => (
           <ProjectCard key={index} {...work} />
         ))}
@@ -39,7 +39,7 @@ const Work = () => {
           }}
         />
       </div>
-      <div className='flex flex-col items-center gap-8 w-full px-4 lg:px-8 my-16 sm:my-32 lg:my-48'>
+      <div className='flex flex-col items-center gap-8 w-full px-4 lg:px-8 my-8 sm:my-16 lg:my-24'>
         {FutureWorkData.map((work, index) => (
           <ProjectCard key={index} {...work} />
         ))}
