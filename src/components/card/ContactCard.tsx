@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ContactCard = () => {
   return (
-    <div className='w-full px-4 lg:px-8 my-16'>
+    <div className='w-full px-4 lg:px-8 my-16 sm:my-24 lg:my-32'>
       <div className='grid justify-center grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8'>
         {contactData.map((contact, index) => (
           <motion.a
