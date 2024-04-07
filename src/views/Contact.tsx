@@ -6,9 +6,9 @@ const Contact = () => {
   return (
     <section
       id='contact'
-      className='text-silver min-h-screen flex flex-col items-center justify-between gap-4 sm:gap-8 font-monospace'
+      className='text-silver h-screen flex flex-col items-center justify-between gap-4 sm:gap-8 font-monospace'
     >
-      <div className='w-full h-1/2 flex flex-col items-start justify-center gap-2 sm:gap-4 font-monospace'>
+      <div className='w-full h-full flex flex-col items-start justify-center gap-2 sm:gap-4'>
         <div className='w-full px-2'>
           <ScreenFitText
             text='Drop A Line'
@@ -33,7 +33,7 @@ const Contact = () => {
           />
           <Paragraph text={'The End.'} />
         </div>
-        <div className='w-full my-16 sm:my-24 lg:my-32'>
+        <div className='w-full my-12'>
           <ContactCard />
         </div>
       </div>
