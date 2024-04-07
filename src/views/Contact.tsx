@@ -31,9 +31,12 @@ const Contact = () => {
               "I am looking for my next opportunity in frontend development, ideally in a role where I'll be helping to build and maintain a component library for web or mobile, but I am open to any remote opportunity where I can be creative and impact a users experience directly. Beyond coding, I love chatting about tech, food, and games, and I'm always here to share a story or lend an ear. Let's connect and craft something amazing together. Drop me a line and let's chat!"
             }
           />
+          <Paragraph text={'The End.'} />
+        </div>
+        <div className='w-full my-16 sm:my-24 lg:my-32'>
+          <ContactCard />
         </div>
       </div>
-      <ContactCard />
     </section>
   );
 };

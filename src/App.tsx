@@ -1,5 +1,6 @@
 import About from './views/About';
 import Contact from './views/Contact';
+import Footer from './views/Footer';
 import Hero from './views/Hero';
 import Work from './views/Work';
 
@@ -10,6 +11,7 @@ function App() {
       <About />
       <Work />
       <Contact />
+      <Footer />
     </div>
   );
 }
