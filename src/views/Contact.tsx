@@ -33,9 +33,7 @@ const Contact = () => {
           />
           <Paragraph text={'The End.'} />
         </div>
-        <div className='w-full my-12'>
-          <ContactCard />
-        </div>
+        <ContactCard />
       </div>
     </section>
   );
