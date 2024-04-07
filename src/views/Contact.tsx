@@ -22,8 +22,8 @@ const Contact = () => {
             }}
           />
         </div>
-        <div className='flex flex-col gap-8 max-w-[1280px] px-4 sm:px-6 lg:px-8 text-sm sm:text-base md:text-lg'>
-          <div className='font-bold text-lg sm:text-2xl lg:text-4xl'>
+        <div className='flex flex-col gap-8 max-w-[1280px] px-4 sm:px-6 lg:px-8 text-sm sm:text-base md:text-lg mb-2'>
+          <div className='font-bold text-lg sm:text-2xl lg:text-4xl my-2'>
             <Paragraph text={'On the lookout for my next adventure!'} />
           </div>
           <Paragraph

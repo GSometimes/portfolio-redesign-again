@@ -24,12 +24,12 @@ const Hero = () => {
   };
 
   return (
-    <section className='text-silver h-[100dvh] flex flex-col items-center justify-between'>
+    <section className='text-silver h-screen flex flex-col items-center justify-between py-4'>
       <motion.div
         variants={heroContainerVariants}
         initial='hidden'
         animate='show'
-        className='w-full h-1/2 flex flex-col items-start justify-center gap-2 sm:gap-4 font-monospace'
+        className='w-full flex flex-col items-start justify-center gap-2 sm:gap-4 font-monospace'
       >
         <motion.div variants={heroItemVariants} className='w-full px-2'>
           <ScreenFitText text='Gore Auluck' />
