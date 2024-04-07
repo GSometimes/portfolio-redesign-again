@@ -24,7 +24,7 @@ const Hero = () => {
   };
 
   return (
-    <section className='text-silver h-screen flex flex-col items-center justify-between py-4'>
+    <section className='text-silver h-[calc(100dvh)] flex flex-col items-center justify-between py-4'>
       <motion.div
         variants={heroContainerVariants}
         initial='hidden'

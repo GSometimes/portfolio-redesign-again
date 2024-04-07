@@ -6,7 +6,7 @@ import Work from './views/Work';
 
 function App() {
   return (
-    <div className='min-h-dvh w-full bg-black overscroll-none'>
+    <div className='w-full bg-black overscroll-none'>
       <Hero />
       <About />
       <Work />
