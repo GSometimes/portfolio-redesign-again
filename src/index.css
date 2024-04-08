@@ -12,7 +12,10 @@
   display: none;
 }
 
+html,
 body {
   @apply overscroll-none;
+  position: relative;
+  min-height: 100dvh;
   background-color: #020204;
 }

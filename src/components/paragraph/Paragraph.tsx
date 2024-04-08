@@ -1,8 +1,5 @@
-// AnimatedParagraph.tsx
-
-import { motion, Variants, useAnimation } from 'framer-motion';
+import { motion, Variants, useAnimation, useInView } from 'framer-motion';
 import { useRef, useEffect } from 'react';
-import { useInView } from 'framer-motion';
 
 type ParagraphProps = {
   text: string;
