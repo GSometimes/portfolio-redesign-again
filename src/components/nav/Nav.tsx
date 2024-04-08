@@ -124,14 +124,14 @@ const Nav = () => {
             aria-labelledby='fixed-nav'
           >
             <ul className='flex items-center justify-center gap-4 font-monospace font-bold'>
-              <Link to='work' smooth={true} duration={625}>
-                <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
-                  Work
-                </li>
-              </Link>
               <Link to='about' smooth={true} duration={625}>
                 <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
                   About
+                </li>
+              </Link>
+              <Link to='work' smooth={true} duration={625}>
+                <li className='px-2 hover:text-orange-peel transition-all duration-200 cursor-pointer'>
+                  Work
                 </li>
               </Link>
               <Link to='contact' smooth={true} duration={625}>
