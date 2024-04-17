@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className='w-full h-16 font-monospace text-silver text-center p-8 flex items-center justify-center'>
+    <div className='w-full font-monospace text-silver text-center p-12 flex items-center justify-center outline'>
       <h1>Designed & Built by Gore Auluck</h1>
     </div>
   );
