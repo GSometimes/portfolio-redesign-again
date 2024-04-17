@@ -1,15 +1,27 @@
 import { AnimatePresence, motion, Variants } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 
 const Nav = () => {
   const [scrolling, setScrolling] = useState<boolean>(false);
 
-  const handleScroll = () => {
-    setScrolling(window.scrollY >= window.innerHeight);
-  };
+  useEffect(() => {
+    let scrollTimeoutId: number;
 
-  window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      setScrolling(window.scrollY >= window.innerHeight);
+      clearTimeout(scrollTimeoutId);
+      scrollTimeoutId = setTimeout(() => {
+        setScrolling(false);
+      }, 2000);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimeoutId);
+    };
+  }, []);
 
   const containerVariants: Variants = {
     hidden: { opacity: 1 },
@@ -113,8 +125,8 @@ const Nav = () => {
         </motion.ul>
       </nav>
 
-      {scrolling && (
-        <AnimatePresence>
+      <AnimatePresence>
+        {scrolling && (
           <motion.nav
             initial='initial'
             animate='animate'
@@ -141,8 +153,8 @@ const Nav = () => {
               </Link>
             </ul>
           </motion.nav>
-        </AnimatePresence>
-      )}
+        )}
+      </AnimatePresence>
     </>
   );
 };
