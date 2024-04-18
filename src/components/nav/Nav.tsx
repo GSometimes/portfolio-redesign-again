@@ -28,7 +28,7 @@ const Nav = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 1,
+        delayChildren: 1.5,
         staggerChildren: 0.25,
       },
     },

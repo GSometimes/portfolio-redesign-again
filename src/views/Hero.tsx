@@ -2,7 +2,7 @@ import { motion, Variants } from 'framer-motion';
 import Nav from '../components/nav/Nav';
 import ScreenFitText from '../components/textfit/ScreeFitText';
 
-const Hero = () => {
+const Hero = ({ startAnimation }: { startAnimation: boolean }) => {
   const heroContainerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
@@ -28,7 +28,7 @@ const Hero = () => {
       <motion.div
         variants={heroContainerVariants}
         initial='hidden'
-        animate='show'
+        animate={startAnimation ? 'show' : 'hidden'}
         className='w-full flex flex-col items-start justify-center gap-2 sm:gap-4 font-monospace'
       >
         <motion.div variants={heroItemVariants} className='w-full px-2'>
