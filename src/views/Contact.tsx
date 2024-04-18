@@ -8,7 +8,7 @@ const Contact = () => {
       id='contact'
       className='text-silver h-[calc(100dvh)] flex flex-col gap-4 sm:gap-8 font-monospace py-8'
     >
-      <div className='w-full h-full flex flex-col items-start justify-between gap-2 sm:gap-4'>
+      <div className='w-full h-full flex flex-col items-start justify-center gap-2 sm:gap-4'>
         <div className='w-full px-2'>
           <ScreenFitText
             text='Drop A Line'
@@ -21,7 +21,7 @@ const Contact = () => {
               },
             }}
           />
-          <div className='flex flex-col gap-6 max-w-[1280px] px-4 sm:px-6 lg:px-8 text-sm sm:text-base md:text-lg mb-2'>
+          <div className='flex flex-col gap-6 max-w-[1280px] px-4 sm:px-6 lg:px-8 text-sm sm:text-base md:text-lg mb-32'>
             <div className='font-bold text-lg sm:text-2xl lg:text-4xl my-2'>
               <Paragraph text={'On the lookout for my next adventure!'} />
             </div>
@@ -32,8 +32,8 @@ const Contact = () => {
             />
             <Paragraph text={'The End.'} />
           </div>
+          <ContactCard />
         </div>
-        <ContactCard />
       </div>
     </section>
   );
