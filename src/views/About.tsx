@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section
       id='about'
-      className='text-silver h-[calc(100dvh)] flex flex-col items-center justify-center gap-4 sm:gap-8 py-4'
+      className='text-silver min-h-screen flex flex-col items-center justify-center gap-4 sm:gap-8 py-4'
     >
       <div className='w-full px-2'>
         <ScreenFitText
