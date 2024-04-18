@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section
       id='contact'
-      className='text-silver h-[100dvh] flex flex-col gap-4 sm:gap-8 font-monospace'
+      className='text-silver min-h-screen sm:h-[100dvh] flex flex-col gap-4 sm:gap-8 font-monospace'
     >
       <div className='w-full h-full flex flex-col items-start justify-center gap-2 sm:gap-4'>
         <div className='w-full px-2'>
@@ -32,6 +32,8 @@ const Contact = () => {
             />
             <Paragraph text={'The End.'} />
           </div>
+        </div>
+        <div className='w-full my-8 sm:my-0'>
           <ContactCard />
         </div>
       </div>
