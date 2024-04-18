@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section
       id='contact'
-      className='text-silver min-h-screen flex flex-col gap-4 sm:gap-8 font-monospace py-8'
+      className='text-silver min-h-screen flex flex-col gap-4 sm:gap-8 font-monospace'
     >
       <div className='w-full h-full flex flex-col items-start justify-center gap-2 sm:gap-4'>
         <div className='w-full px-2'>
@@ -21,7 +21,7 @@ const Contact = () => {
               },
             }}
           />
-          <div className='flex flex-col gap-6 max-w-[1280px] px-4 sm:px-6 lg:px-8 text-sm sm:text-base md:text-lg mb-32'>
+          <div className='flex flex-col gap-6 max-w-[1280px] px-4 sm:px-6 lg:px-8 text-sm sm:text-base md:text-lg mb-4'>
             <div className='font-bold text-lg sm:text-2xl lg:text-4xl my-2'>
               <Paragraph text={'On the lookout for my next adventure!'} />
             </div>
