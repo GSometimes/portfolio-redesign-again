@@ -6,7 +6,7 @@ const Work = () => {
   return (
     <section
       id='work'
-      className='text-silver min-h-screen flex flex-col items-center gap-4 sm:gap-8 py-4'
+      className='text-silver h-[calc(100dvh)] flex flex-col items-center gap-4 sm:gap-8 py-4'
     >
       <div className='w-full px-2'>
         <ScreenFitText
