@@ -6,7 +6,7 @@ const Splash = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.75 } }}
       exit={{ opacity: 0, transition: { duration: 0.75 } }}
-      className='text-white [font-size:_clamp(2rem,5vw,5rem)] font-bold text-left h-screen w-full flex items-center justify-center font-monospace bg-black p-4 overscroll-none overflow-hidden'
+      className='text-white [font-size:_clamp(2rem,5vw,5rem)] font-bold text-left h-[100dvh] w-full flex items-center justify-center font-monospace bg-black p-4 overscroll-none overflow-hidden'
     >
       <h1 className='p-4'>I'm just a potato trying to be a Hasselback.</h1>
     </motion.div>
