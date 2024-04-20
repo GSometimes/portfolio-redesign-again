@@ -1,17 +1,16 @@
 import { AnimatePresence, motion, Variants } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-scroll';
 
 const Nav = () => {
   const [scrolling, setScrolling] = useState<boolean>(false);
+  const scrollTimeoutId = useRef<number | undefined>(0);
 
   useEffect(() => {
-    let scrollTimeoutId: number;
-
     const handleScroll = () => {
       setScrolling(window.scrollY >= window.innerHeight);
-      clearTimeout(scrollTimeoutId);
-      scrollTimeoutId = setTimeout(() => {
+      clearTimeout(scrollTimeoutId.current);
+      scrollTimeoutId.current = setTimeout(() => {
         setScrolling(false);
       }, 2000);
     };
@@ -19,8 +18,20 @@ const Nav = () => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      clearTimeout(scrollTimeoutId);
+      if (scrollTimeoutId.current) {
+        clearTimeout(scrollTimeoutId.current);
+      }
     };
+  }, []);
+
+  const stopScrollTimeout = useCallback(() => {
+    clearTimeout(scrollTimeoutId.current);
+  }, []);
+
+  const restartScrollTimeout = useCallback(() => {
+    scrollTimeoutId.current = setTimeout(() => {
+      setScrolling(false);
+    }, 2000);
   }, []);
 
   const containerVariants: Variants = {
@@ -134,6 +145,8 @@ const Nav = () => {
             variants={fixedNavVariants}
             className='fixed z-50 px-4 py-2 rounded-3xl left-1/2 top-5 bg-black/75 backdrop-blur-3xl text-silver outline'
             aria-labelledby='fixed-nav'
+            onMouseEnter={stopScrollTimeout}
+            onMouseLeave={restartScrollTimeout}
           >
             <ul className='flex items-center justify-center gap-4 font-monospace font-bold'>
               <Link to='about' smooth={true} duration={625}>
