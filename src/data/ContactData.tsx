@@ -10,7 +10,7 @@ export const contactData: Contact[] = [
   },
   {
     form: 'Resume',
-    link: 'https://drive.google.com/file/d/1bg9jbPY4iZthCn5vxnpPWSb0c8EwtZe7P6l4onyCrV4/view',
+    link: 'https://drive.google.com/file/d/1psuMzRl18CTQMGbGyUszpZ82a1NtpsliGemtSDhia6E/view',
   },
   {
     form: 'Github',
